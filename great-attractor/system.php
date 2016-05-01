@@ -132,6 +132,7 @@ function ga_register_request()
   $time = time();
   $request = new stdClass();
   $request->time = date('c', $time);
+  $request->url = $_SERVER[HTTP_HOST].$_SERVER[REQUEST_URI];
   $request->timezone = date('e', $time);
   $request->pageName = $GLOBALS['pagename'];
   $request->ipAddress = $_SERVER['REMOTE_ADDR'];
